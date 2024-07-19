@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gurajada&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <title>Face Recognition</title>
+</head>
+<body>
+    <div class="particle-js" id="particles-js"></div>
+    <div class="container">
+        <div class="glass-morphism">
+            <h1>Face Recognition System</h1>
+        </div>
+        <div class="options">
+            <div class="glass-morphism-2">
+                <ul>
+                    <li><a href="/attendance">Take Attendance</a></li>
+                    <li><a href="/register">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        particlesJS.load('particles-js', 'static/assets/particlesjs-config.json', function() {
+        console.log('particlesjs loaded');
+    });
+    </script>
+</body>
+</html>

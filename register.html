@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='register.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gurajada&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <title>Face Attendance System</title>
+</head>
+<body>
+    <div class="particle-js" id="particles-js"></div>
+    <div class="container">
+        <div class="glass-morphism">
+            <h1>Registration Form</h1>
+        </div>
+        <div class="options">
+            <div class="glass-morphism-2">
+                 <div class="left-sub">
+                    <form method="POST" action="/register" enctype="multipart/form-data">
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" name="name"><br>
+                        <label for="rollno">Roll Number:</label><br>
+                        <input type="text" id="rollno" name="rollno"><br>
+                        <label for="class">Class:</label><br>
+                        <input type="text" id="class" name="class"><br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="right-sub">
+                    <img src="{{ url_for('video_capture', name=name) }}" id="video-feed">
+                    <button onclick="captureFrame()">Capture Image</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function captureFrame() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/capture_frame?name=' + document.getElementById('name').value, true);
+            xhr.send();
+        }
+
+        particlesJS.load('particles-js', 'static/assets/particlesjs-config.json', function() {
+        console.log('particlesjs loaded');
+        });
+    </script>
+</body>
+</html>

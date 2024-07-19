@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='attendance.css') }}">
+    <title>Face Attendance System</title>
+</head>
+
+<body>
+    <h1>Face Attendance System</h1>
+    <!-- <video id="video" width="640" height="480" autoplay></video> -->
+
+    <!-- <script>
+        var video = document.getElementById('video');
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(function (err) {
+                console.log("An error occurred: " + err);
+            });
+    </script> -->
+    <div class="video-feed">
+        <img src="{{ url_for('video_feed') }}">
+    </div>
+
+</body>
+
+</html>
